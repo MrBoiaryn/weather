@@ -1,0 +1,73 @@
+.container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: auto;
+
+  .container-content{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+  }
+}
+
+.Thunderstorm{
+  background-image: url(../../../assets/images/thunderstorm.png);
+  background-attachment: fixed;
+}
+
+.Drizzle{
+  background-image: url(../../../assets/images/drizzle.png);
+  background-attachment: fixed;
+}
+
+.Rain{
+  background-image: url(../../../assets/images/rain.png);
+  background-attachment: fixed;
+}
+
+.Snow{
+  background-image: url(../../../assets/images/snow.png);
+  background-attachment: fixed;
+}
+
+.Clear{
+  background-image: url(../../../assets/images/clear.png);
+  background-attachment: fixed;
+}
+
+.Clouds{
+  background-image: url(../../../assets/images/clouds.png);
+  background-attachment: fixed;
+}
+
+.night{
+  background-color: rgba(0, 0, 0, 0.7);
+  background-attachment: fixed;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  33.33% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

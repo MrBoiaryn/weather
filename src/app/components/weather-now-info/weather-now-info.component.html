@@ -1,0 +1,34 @@
+<div class="content_weather_now_info">
+  <ul>
+    <li>
+      <mat-icon>device_thermostat</mat-icon>
+      <p>Feels like</p>
+      <p>{{ currentFeelsLike | number: '1.0-0' }} &#176;</p>
+    </li>
+    <li>
+      <mat-icon>air</mat-icon>
+      <p>{{ currentWindDirection }}</p>
+      <p>{{currentWindSpeed}} m/s</p>
+    </li>
+    <li>
+      <mat-icon>water_drop</mat-icon>
+      <p>Humidity</p>
+      <p>{{ currentHumidity }}%</p>
+    </li>
+    <li>
+      <mat-icon>sunny</mat-icon>
+      <p>UV index</p>
+      <p>{{ currentUvi }} {{currentUviDescription}}</p>
+    </li>
+    <li>
+      <mat-icon>visibility</mat-icon>
+      <p>Visibility</p>
+      <p>{{currentVisibility}} km</p>
+    </li>
+    <li>
+      <mat-icon>cloud_download</mat-icon>
+      <p>Pressure</p>
+      <p>{{currentPressure}} hPa</p>
+    </li>
+  </ul>
+</div>

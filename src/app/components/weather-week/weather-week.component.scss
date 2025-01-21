@@ -1,0 +1,60 @@
+.content_weather_week {
+  background-color: rgba(128, 128, 128, 0.7);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  overflow-x: auto;
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  li > * {
+    margin-right: 10px;
+    flex-shrink: 0;
+
+  }
+
+  li > *:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    width: 30px;
+    height: auto;
+    display: block;
+  }
+
+  .description {
+    flex-grow: 1;
+  }
+
+  @media (max-width: 768px) {
+
+    li > * {
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+
+    }
+
+    li > *:last-child {
+      margin-bottom: 0;
+    }
+
+    overflow-x: auto; 
+    white-space: nowrap;
+
+  }
+}

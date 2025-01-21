@@ -1,0 +1,15 @@
+<div class="content_weather_now">
+  <div>
+    <p>
+      <span class="currentTemp">{{currentTemp | number: '1.0-0'}}&#176;</span>
+      <span class="scroll-text" [appScrollAnimation]="'animate'">{{currentWeatherDescription |
+        titlecase}}</span>
+    </p>
+    <p class="currentDt">
+      <span>{{currentDt | date:'cccccc' | uppercase}}&nbsp;&nbsp;</span>
+      <span>{{ dailyTempMin | number: '1.0-0' }}&#176;</span>&nbsp;/&nbsp;<span>{{dailyTempMax | number:
+        '1.0-0'}}&#176;</span>
+      <span>&nbsp;&nbsp;Feels like: {{currenFeelsLike | number: '1.0-0'}}&#176;</span>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.content_weather_now{
+  width: 300px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.7);
+  border-radius: 20px;
+
+  p {
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    .currentTemp{
+      display: inline-block;
+    }
+  }
+
+  .scroll-text {
+    display: inline-block;
+    font-size: 30px;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+  
+  }
+
+  .scroll-text.animate {
+    animation: scroll 15s linear infinite;
+  }
+
+  .currentDt{
+    font-size: 15px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  33.33% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

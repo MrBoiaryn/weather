@@ -1,0 +1,11 @@
+<div class="content_weather_week">
+  <ul>
+    <li *ngFor="let day of weeklyData; let i = index">
+      <span>{{ i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : (day.date | date:'E') }}</span>
+      <img src="http://openweathermap.org/img/wn/{{day.icon}}@2x.png" alt="{{day.description}}"
+        title="{{day.description}}">
+      <span class="description">{{ day.description }}</span>
+      <span>{{ day.temp.max | number:'1.0-0' }}° / {{ day.temp.min | number:'1.0-0' }}°</span>
+    </li>
+  </ul>
+</div>

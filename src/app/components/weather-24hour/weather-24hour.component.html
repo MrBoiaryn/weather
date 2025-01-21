@@ -1,0 +1,10 @@
+<div class="content_weather_24hour">
+  <ul>
+    <li *ngFor="let hour of hourlyData">
+      <span>{{ hour.date | date:'HH:mm' }}</span>
+      <img src="http://openweathermap.org/img/wn/{{hour.icon}}@2x.png" alt="{{hour.description}}"
+        title="{{hour.description}}">
+      <span>{{ hour.temp | number: '1.0-0'}}&#176;</span>
+    </li>
+  </ul>
+</div>

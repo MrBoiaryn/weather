@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { WeatherDataService } from '../../shared/services/weather-data.service';
+import { GeolocationService } from '../../shared/services/geolocation.service';
 
 @Component({
   selector: 'app-geoposition',
@@ -21,19 +22,38 @@ import { WeatherDataService } from '../../shared/services/weather-data.service';
   styleUrl: './geoposition.component.scss',
 })
 export class GeopositionComponent {
-  constructor(private weatherDataService: WeatherDataService) {}
+  cityName: string | null = null;
+  locationError: string | null = null;
+
+  constructor(
+    private weatherDataService: WeatherDataService,
+    private geolocationService: GeolocationService
+  ) {}
 
   ngOnInit() {
-    this.getWeatherData();
+    this.getLocation();
   }
 
-  value = 'Kyiv';
-
-  getWeatherData() {
-    this.weatherDataService.getWeatherData().subscribe((data) => {
-      if (data) {
-        this.value = data.timezone;
-      }
-    });
+  getLocation() {
+    this.geolocationService
+      .getCurrentPosition()
+      .then((position) => {
+        const { latitude, longitude } = position.coords;
+        console.log(`Широта: ${latitude}, Довгота: ${longitude}`); // Додай цей рядок
+        this.geolocationService.getCityName(latitude, longitude).then(
+          (city) => {
+            this.cityName = city;
+            console.log('Ваш населений пункт:', city);
+          },
+          (error) => {
+            this.locationError = 'Не вдалося отримати назву населеного пункту.';
+            console.error(error);
+          }
+        );
+      })
+      .catch((error) => {
+        this.locationError = 'Не вдалося отримати вашу геолокацію.';
+        console.error(error);
+      });
   }
 }

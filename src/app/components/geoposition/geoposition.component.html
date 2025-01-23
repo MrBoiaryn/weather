@@ -1,9 +1,9 @@
 <div class="content_geoposition">
   <mat-form-field class="example-form-field" appearance="outline">
     <mat-label>Your City</mat-label>
-    <input matInput type="text" [(ngModel)]="value" placeholder="Enter your city...">
-    @if (value) {
-    <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <input matInput type="text" [(ngModel)]="cityName" placeholder="Enter your city...">
+    @if (cityName) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="cityName=''">
       <mat-icon>close</mat-icon>
     </button>
     }

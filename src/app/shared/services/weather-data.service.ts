@@ -50,7 +50,7 @@ export class WeatherDataService {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
 
-      console.log(`Координати отримані: ${this.latitude}, ${this.longitude}`);
+      // console.log(`Координати отримані: ${this.latitude}, ${this.longitude}`);
 
       this.fetchWeatherData();
     } catch (error) {
